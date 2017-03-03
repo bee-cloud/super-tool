@@ -28,17 +28,25 @@ public class HttpUtil {
     return getResponseMsg(httpClient, post);
   }
 
-  public static String sendCommandWithParamsAndNoWait(String username, String password, String ip, int port, String command, String name) {
+  public static String sendCommandWithParamsAndNoWait(String username,
+                                                      String password,
+                                                      String ip,
+                                                      int port,
+                                                      String command,
+                                                      String name) {
     CloseableHttpClient httpClient = getCloseableHttpClient(username, password, ip, port);
-    HttpPost post =
-        getHttpPost(ip, port, new StringEntity(SupervisorUtil.buildCommandWithParamsAndNoWait(command, name), Charsets.UTF_8));
+    HttpPost post = getHttpPost(ip, port, new StringEntity(SupervisorUtil.buildCommandWithParamsAndNoWait(command, name), Charsets.UTF_8));
     return getResponseMsg(httpClient, post);
   }
 
-  public static String sendCommandWithParamsAndWait(String username, String password, String ip, int port, String command, String name) {
+  public static String sendCommandWithParamsAndWait(String username,
+                                                    String password,
+                                                    String ip,
+                                                    int port,
+                                                    String command,
+                                                    String name) {
     CloseableHttpClient httpClient = getCloseableHttpClient(username, password, ip, port);
-    HttpPost post =
-        getHttpPost(ip, port, new StringEntity(SupervisorUtil.buildCommandWithParamsAndWait(command, name), Charsets.UTF_8));
+    HttpPost post = getHttpPost(ip, port, new StringEntity(SupervisorUtil.buildCommandWithParamsAndWait(command, name), Charsets.UTF_8));
     return getResponseMsg(httpClient, post);
   }
 

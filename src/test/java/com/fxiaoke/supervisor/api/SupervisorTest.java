@@ -13,25 +13,25 @@ public class SupervisorTest {
   private Supervisor supervisor;
 
   @Before
-  public void init () {
+  public void init() {
     supervisor = new SupervisorService();
   }
 
   @Test
-  public void testExecuteCommandNoParams(){
+  public void testExecuteCommandNoParams() {
     String result = supervisor.executeCommandNoParams("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.GET_ALL_PROCESS_INFO);
     System.out.println(result);
   }
 
   @Test
-  public void testExecuteCommandwWithParamsAndWait(){
-    boolean result = supervisor.executeCommandwWithParamsAndWait("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.STOP_PROCESS, "jagent");
+  public void testExecuteCommandWithParamsAndWait() {
+    boolean result = supervisor.executeCommandWithParamsAndWait("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.STOP_PROCESS, "jagent");
     System.out.println(result);
   }
 
   @Test
-  public void testExecuteCommandwWithParamsAndNoWait(){
-    boolean result = supervisor.executeCommandwWithParamsAndNoWait("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.START_PROCESS, "jagent");
+  public void testExecuteCommandWithParamsAndNoWait() {
+    boolean result = supervisor.executeCommandWithParamsAndNoWait("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.START_PROCESS, "jagent");
     System.out.println(result);
   }
 }

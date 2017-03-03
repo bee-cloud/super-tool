@@ -10,7 +10,7 @@ public class MethodCall {
   private String methodName;
   private Params params;
 
-  public MethodCall(){
+  public MethodCall() {
     super();
   }
 

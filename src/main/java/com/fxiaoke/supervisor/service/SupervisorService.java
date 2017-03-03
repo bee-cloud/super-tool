@@ -12,23 +12,30 @@ public class SupervisorService implements Supervisor {
     return HttpUtil.sendCommandNoParams(username, password, url, port, command);
   }
 
-  public boolean executeCommandwWithParamsAndWait(String username, String password, int port, String url, String command, String name) {
+  public boolean executeCommandWithParamsAndWait(String username,
+                                                 String password,
+                                                 int port,
+                                                 String url,
+                                                 String command,
+                                                 String name) {
     String result = HttpUtil.sendCommandWithParamsAndWait(username, password, url, port, command, name);
-    if (result.indexOf(">1<") > 0){
+    if (result.indexOf(">1<") > 0) {
       return true;
     }
     return false;
   }
 
-  public boolean executeCommandwWithParamsAndNoWait(String username, String password, int port, String url, String command, String name) {
+  public boolean executeCommandWithParamsAndNoWait(String username,
+                                                   String password,
+                                                   int port,
+                                                   String url,
+                                                   String command,
+                                                   String name) {
     String result = HttpUtil.sendCommandWithParamsAndNoWait(username, password, url, port, command, name);
-    if (result.indexOf(">1<") > 0){
+    if (result.indexOf(">1<") > 0) {
       return true;
     }
     return false;
   }
-
-
-
 
 }
