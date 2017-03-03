@@ -19,7 +19,7 @@ public class SupervisorTest {
 
   @Test
   public void testExecuteCommandNoParams() {
-    String result = supervisor.executeCommandNoParams("fs", "fsxiaoke", 9001, "172.31.101.12", SupervisorCommand.GET_ALL_PROCESS_INFO);
+    String result = supervisor.executeCommandNoParams("fs", "fsxiaoke", 9001, "172.31.101.12", "system.listMethods");
     System.out.println(result);
   }
 
